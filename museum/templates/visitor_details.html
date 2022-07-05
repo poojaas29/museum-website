@@ -1,0 +1,34 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container" style="margin-top:60px">
+    <h2 class="text-center text-primary font-weight-bold">VISITOR DETAILS</h2>
+    <table id="example" class="table table-hover">
+        <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>Full Name</th>
+            <th>Username</th>
+            <th>Address</th>
+            <th>Nationality</th>
+            <th>Contact No.</th>
+            <th>Date of Birth</th>
+            <th>Age</th>
+        </tr>
+        {% for i in visitor %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td style="text-transform : capitalize">{{i.user.first_name}} {{i.user.last_name}}</td>
+            <td>{{i.user.username}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.nationality}}</td>
+            <td>{{i.contact}}</td>
+            <td>{{i.dob}}</td>
+            <td>{{i.age}}</td>
+        </tr>
+        {% endfor %}
+        </thead>
+    </table>
+</div>
+{% endblock %}

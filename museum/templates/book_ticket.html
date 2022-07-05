@@ -1,0 +1,36 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+{% ifequal error "no" %}
+<script>
+    alert('Ticket Booked successfully');
+    window.location=('{% url 'home' %}');
+</script>
+{% endifequal %}
+
+
+{% ifequal error "yes" %}
+<script>
+    alert('Something went wrong, Try Again');
+</script>
+{% endifequal %}
+
+<div class="container" style="margin-top:60px">
+    <h2 class="text-center text-primary font-weight-bold">Book Ticket</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        <label><b>Username</b></label>
+        <input type="text" class="form-control" name="username" placeholder="Enter your username" required>
+        <label><b>Visiting Time</b></label>
+        <input type="text" class="form-control" name="time" placeholder="eg. 03:14:07">
+        <label><b>Visiting Date</b></label>
+        <input type="text" class="form-control" name="date" placeholder="YYYY-MM-DD">
+        <label><b>Number of Tickets</b></label>
+        <input type="text" class="form-control" name="number" placeholder="Enter number of tickets">
+        <br>
+        <input type="Submit" value="Book" class="from-control btn btn-primary">
+    </form>
+</div>
+
+{% endblock %}

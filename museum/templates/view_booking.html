@@ -1,0 +1,28 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container" style="margin-top:60px">
+    <h2 class="text-center text-primary font-weight-bold">BOOKING DETAILS</h2>
+    <table id="example" class="table table-hover">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Visiting Time</th>
+            <th>Visiting Date</th>
+            <th>Number of Tickets</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in booked %}
+        <tr>
+            <td>{{i.user.username}}</td>
+            <td>{{i.time}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.number}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

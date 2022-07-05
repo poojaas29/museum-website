@@ -1,0 +1,129 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+h1{
+text-shadow: 3px 3px 2px white;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: black;
+}
+
+.
+
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+
+<div class="about-section">
+  <h1 class="text-white container pt-4">ABOUT US</h1><hr>
+    <p><h3 style="font-family : 'Monotype Corsiva'">National Museum aims to bring together under one roof, the cultures of the world, spanning continents and oceans</h3></p>
+    <p><h3 style="font-family : 'Monotype Corsiva'">" Welcome To the World Of Probing "</h3></p>
+</div>
+
+<h2 style="text-align:center">EXPLORE.ENGAGE.ENJOY!</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/image2.jpg' %}" alt="Jane" style="width:100%">
+      <div class="container">
+
+        <p class="title"><h3>EXHIBITIONS & EVENTS</h3></p><hr>
+        <p>Witness a myriad of intriguing exhibitions and events at the museum.You can also propel towrds a virtual exhibtion tour right from your home.</p>
+          <p>
+          <ul style="list-style-type:disc">
+          <li>The Arctic Culture</li>
+          <li>Reflections-The Middle East Art</li>
+          <li>Crossings-Community & Refuge</li>
+          <li>Egyptian Mummies-Exploring Ancient lives</li>
+          <li>Rome-City and Empire</li>
+          </ul>
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/image5.jpg' %}" alt="Mike" style="width:100%">
+      <div class="container">
+          <p class="title"><h3>CONTACT US</h3></p>
+        <hr>
+                <p>Email ID : nationalmuseum@gmail.com</p>
+                <p>Contact : 123456789</p>
+                <p>Address : Manila, Philippines</p>
+                <p>Opening hours : 09:00 am to 7:00pm</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/image3.jpg' %}" alt="John" style="width:100%">
+      <div class="container">
+          <p class="title"><h3>MUSEUM HIGHLIGHTS</h3></p><hr>
+        <p>The following are some of te most appreciated facets of NATIONAL MUSEUM, which are fabled all around the globe!</p>
+        <p>
+          <ul style="list-style-type:disc">
+          <li>Egyptian Sculpture Gallery</li>
+          <li>RThe Waddeson Bequest</li>
+          <li>Assyria : Nimrud</li>
+          <li>Greece: Minoans and Myceneans</li>
+          <li>Athens and Lycia</li>
+          </ul>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

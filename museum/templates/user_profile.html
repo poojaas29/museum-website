@@ -1,0 +1,47 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+{% ifequal error "yes" %}
+<script>
+alert('Invalid credentials, try again');
+</script>
+{% endifequal %}
+
+
+{% ifequal error "no" %}
+<script>
+     alert('Account created successfully');
+     window.location=('{% url 'user_login' %}');
+</script>
+{% endifequal %}
+
+
+<div class="container" style="margin-top:60px">
+    <h2 class="text-center text-primary font-weight-bold">Create Account</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        <label><b>First Name</b></label>
+        <input type="text" class="form-control" name="first_name" placeholder="Enter your first name" required>
+        <label><b>Last Name</b></label>
+        <input type="text" class="form-control" name="last_name" placeholder="Enter your last name" required>
+        <label><b>Username</b></label>
+        <input type="text" class="form-control" name="username" placeholder="Create your username eg.kevin12" required>
+        <label><b>Password</b></label>
+        <input type="password" class="form-control" name="password" placeholder="Enter your password"required>
+        <label><b>Address</b></label>
+        <input type="text" class="form-control" name="address" placeholder="Enter your address" required>
+        <label><b>Nationality</b></label>
+        <input type="text" class="form-control" placeholder="Enter your first nationality" name="nationality">
+        <label><b>Contact Number</b></label>
+        <input type="text" class="form-control" name="contact" placeholder="Enter your contact number">
+        <label><b>Date Of Birth</b></label>
+        <input type="text" class="form-control" name="dob" placeholder="YYYY-MM-DD">
+        <label><b>Age</b></label>
+        <input type="text" class="form-control" name="age" placeholder="Enter your age">
+        <br>
+        <input type="Submit" value="SUBMIT" class="from-control btn btn-primary">
+    </form>
+</div>
+
+{% endblock %}

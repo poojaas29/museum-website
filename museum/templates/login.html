@@ -1,0 +1,70 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+
+{% ifequal error "no" %}
+<script>
+    alert('Logged in successfully');
+    window.location=('{% url 'view_booking' %}');
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Invalid login credentials, Try Again');
+</script>
+{% endifequal %}
+
+<style>
+.image{
+
+width: 100%;
+height: 100%;
+background-position: center center;
+background-color:black;
+background-attachment: absolute;
+background-size: cover !important;
+
+}
+
+input{
+width: 50%;
+}
+h2{
+text-shadow: 1px 1px 1px white;
+color: white;
+}
+div.container{
+position: absolute;
+top: 90px;
+width: 300px;
+left: 320px;
+right: 300px;
+background-color:grey;
+border-radius:8px;
+
+}
+
+h5{
+text-shadow: 1px 1px 1px white;
+color: white;
+}
+</style>
+
+
+<div class="image" style="background: url('{% static 'images/end.jpg' %}') no-repeat">
+<div class="container">
+    <h2 class="text-center font-weight-bold">ADMIN LOGIN</h2><hr>
+    <form method="post">
+        {% csrf_token %}
+        <label><b><h5 style="font-family : 'verdana';">Admin Name</h5></b></label>
+        <input type="text" class="form-control" name="uname">
+        <label><b><h5 style="font-family : 'verdana';">Password</h5></b></label>
+        <input type="password" class="form-control" name="pwd">
+        <br>
+        <input type="Submit" value="Login" class="from-control btn btn-primary">
+    </form>
+</div></div>
+
+
+{% endblock %}

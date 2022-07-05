@@ -1,0 +1,21 @@
+{% extends 'navigationbar.html' %}
+{% block body %}
+{% load static %}
+
+
+<style>
+
+.image{
+background: url({% static 'images/def.jpg' %}) no-repeat;
+width: 100%;
+height: 100%;
+background-position: center center;
+background-color:black;
+}
+
+</style>
+
+<div class="image">
+</div>
+
+{% endblock %}
